@@ -29,7 +29,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
-    "keyofStringsOnly": true
   },
   "include": [
     "src"
