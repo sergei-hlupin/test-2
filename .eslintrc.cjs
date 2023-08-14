@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: { browser: true, es2020: true, node: true },
   settings: {
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx'],

@@ -1,27 +1,61 @@
-# React + TypeScript + Vite
+# О проекте
+Данный проект - мини-копия сайта [DNS](https://www.dns-shop.ru/actions/)
+  
+Как правило, в задачах, нужно будет полностью повторить функционал и дизайн некоторой [фичи](https://hsbi.hse.ru/articles/ficha-chto-eto-znachit/) dns.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+У вас будет пример перед глазами, что именно нужно сделать, как это работает и как это выглядит
 
-Currently, two official plugins are available:
+### Доска с задачами
+[Trello](https://trello.com/b/z3eUgvOX/kata)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Основные библиотеки
 
-## Expanding the ESLint configuration
+- [React](https://react.dev/)
+- [Typescript](https://www.typescriptlang.org/docs/)
+- [Redux toolkit](https://redux-toolkit.js.org/)
+- [Material-ui](https://mui.com/material-ui/getting-started/)
+- [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react/en/simple-component/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Основные команды
+| Command           | Description                                                |
+|-------------------|------------------------------------------------------------|
+| `npm run dev `    | запускает фронтенд вместе с локальным бекенд сервером      |
+| `npm run start`   | запускает фронтенд                                         |
+| `npm run storybook`| запускает сервер storybook                                 |
 
-- Configure the top-level `parserOptions` property like this:
+### Первый локальный запуск
+1. `git clone git@github.com:h0tzz/kata-project.git`
+2. `cd <каталог с приложением>`, например: `cd ~/kata-project`
+3. `npm ci`
+4. `npm run dev`
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### Структура папок проекта
+| Api        | Description                                                                           |
+|------------|---------------------------------------------------------------------------------------|
+| `server`   | наш сервер, что-то менять в нем запрещено                                             |
+| `pages`    | страницы приложения                                                                   |
+| `services` | тут должны храниться функции для запросов на сервер, вместе с интерфейсами данных     |
+| `stores`   | хранилища redux наших страниц сайта                                                   |
+| `stroies`  | библиотека компонентов                                                                |
+| `common`   | разные полезные вещи, например, кастомные хуки, константы или вспомогательные функции |
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### API
+| Api                              | Description                |
+|----------------------------------|----------------------------|
+| `http://localhost:8000/products` | получение списка товаров   |
+| `http://localhost:8000/reviews`  | получение списка отзывов   |
+| `http://localhost:8000/shops`    | получение списка магазинов |
+| `http://localhost:8000/stocks`   | получение списка акций     |
+
+В качестве бекенда используется [json-server](https://www.npmjs.com/package/json-server). 
+Json server предоставляет нам полноценный локальный бекенд.
+
+Как пример, для списка продуктов, можно добавить пагинацию:
+
+`http://localhost:8000/products?_page=7&_limit=20`
+
+Рекомендую посмотреть эти видео:
+
+[Json server for beginners](https://www.youtube.com/playlist?list=PLC3y8-rFHvwhc9YZIdqNL5sWeTCGxF4ya)
+
+[Локальный сервер для проектов и тестирования](https://www.youtube.com/watch?v=odwOkxkmVH8)
