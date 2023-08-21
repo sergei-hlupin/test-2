@@ -6,7 +6,10 @@
 У вас будет пример перед глазами, что именно нужно сделать, как это работает и как это выглядит
 
 ### Доска с задачами
-[Trello](https://trello.com/b/z3eUgvOX/kata)
+[Jira](https://jora.kata.academy/secure/RapidBoard.jspa?projectKey=DNS576829&rapidView=4)
+
+### конфлюенс
+[конфлюенс](https://wika.kata.academy/pages/viewpage.action?spaceKey=DNS576829&title=DNS+Home)
 
 ### Основные библиотеки
 
