@@ -12,7 +12,7 @@ export default defineConfig({
       common: '/src/common',
       pages: '/src/pages',
       services: '/src/services',
-      stories: '/src/stories',
+      stories: '/src/ui',
     }
   },
 })
