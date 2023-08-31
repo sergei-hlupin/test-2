@@ -2,7 +2,7 @@ const App = () => {
 
   return (
     <>
-      <span>hello wrold</span>
+      <span>hello world</span>
     </>
   )
 }
