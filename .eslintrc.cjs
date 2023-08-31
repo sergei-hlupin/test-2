@@ -38,6 +38,7 @@ module.exports = {
     "quotes": ["error", "single"],
     "curly": ["error", "all"],
     "react/boolean-prop-naming": "off",
+    "react/prop-types": "off",
     "react/require-default-props": "off",
     "react/no-children-prop": "off",
     "react/forbid-prop-types": "off",
