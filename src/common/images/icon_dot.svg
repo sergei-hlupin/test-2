@@ -1,0 +1,3 @@
+<svg width={5} height={5} viewBox='0 0 5 5'>
+  <rect width='5' height='5' rx='2.5' fill='#FFA319'></rect>
+</svg>
