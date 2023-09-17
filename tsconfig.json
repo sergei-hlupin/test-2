@@ -12,7 +12,7 @@
       "common/*": ["common/*"],
       "pages/*": ["pages/*"],
       "services/*": ["services/*"],
-      "stories/*": ["stories/*"],
+      "stories/*": ["stories/*"]
     },
 
     /* Bundler mode */
@@ -28,11 +28,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "src"
-  ],
-  "references": [{ "path": "./tsconfig.node.json"}],
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules"]
 }
