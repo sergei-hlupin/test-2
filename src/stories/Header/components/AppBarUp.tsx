@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { Box, AppBar, Toolbar, Stack, Typography, Button, Link } from 'stories';
 import OpenModaltoBuyers from './OpenModaltoBuyers';
-import { Arrow, Dot } from 'common/images';
+import { Dot } from 'common/images';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 const AppBarUp = () => {
-  const [openBuyer, setOpenBuyer] = useState(false);
-  const openModalBuyer = () => setOpenBuyer(true);
-  const closeModalBuyer = () => setOpenBuyer(false);
+  const [isOpenBuyerModal, setIsOpenBuyerModal] = useState(false);
+  const openModalBuyer = () => setIsOpenBuyerModal(true);
+  const closeModalBuyer = () => setIsOpenBuyerModal(false);
 
   return (
-    <AppBar position='static'>
-      <Toolbar>
+    <AppBar position='static' sx={{ bgcolor: 'primary.main' }}>
+      <Toolbar sx={{ width: 1360, margin: '0 auto' }}>
         <Box width={'100%'} display={'flex'} justifyContent={'space-between'}>
           <Link to='/'>Санкт-Петербург</Link>
           <Stack spacing={3} direction='row' alignItems={'center'}>
@@ -20,10 +21,10 @@ const AppBarUp = () => {
               </Typography>
               <Dot width={6} height={6} />
             </Link>
-            <Link to='/'>Магазины</Link>
+            <Link to='/shops'>Магазины</Link>
             <Link component={Button} onClick={openModalBuyer} display={'flex'} alignItems={'center'} to=''>
               Покупателям
-              <Arrow width={20} height={20} />
+              {isOpenBuyerModal ? <ExpandLess fontSize='small' /> : <ExpandMore fontSize='small' />}
             </Link>
             <Link to='/'>Юридическим лицам</Link>
             <Link to='/'>Клуб DNS</Link>
@@ -35,7 +36,7 @@ const AppBarUp = () => {
             </Typography>
           </Box>
         </Box>
-        <OpenModaltoBuyers open={openBuyer} onClose={closeModalBuyer} />
+        <OpenModaltoBuyers open={isOpenBuyerModal} onClose={closeModalBuyer} />
       </Toolbar>
     </AppBar>
   );

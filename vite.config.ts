@@ -19,6 +19,7 @@ export default defineConfig({
       pages: '/src/pages',
       services: '/src/services',
       stories: '/src/stories',
+      stores: '/src/stores',
     },
   },
 });

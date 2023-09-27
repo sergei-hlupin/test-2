@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Box, AppBar, Toolbar, Stack, Typography, Button, TextField, Link, Backdrop } from 'stories';
 
-import { Compare, Arrow, Wishlist, Basket, UserProfile } from 'common/images';
+import { Compare, Wishlist, Basket, UserProfile } from 'common/images';
 import OpenModalCatalog from './OpenModalCatalog';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 const AppBarBottom = () => {
   const [searchText, setSearchText] = useState('');
@@ -19,8 +20,8 @@ const AppBarBottom = () => {
   };
 
   return (
-    <AppBar position='sticky'>
-      <Toolbar>
+    <AppBar position='sticky' sx={{ top: '0px', pb: 3, bgcolor: 'primary.main' }}>
+      <Toolbar sx={{ width: 1400, margin: '0 auto' }}>
         <Box
           flex={1.5}
           bgcolor='orange.main'
@@ -41,8 +42,10 @@ const AppBarBottom = () => {
             sx={{ display: 'flex', alignItems: 'center', padding: 1, bgcolor: 'orange.light' }}
             variant='text'
           >
-            <Typography variant='body2'>Каталог</Typography>
-            <Arrow width={24} height={24} />
+            <Typography variant='body2' textTransform={'capitalize'} fontWeight={600}>
+              Каталог
+            </Typography>
+            {openCatalog ? <ExpandLess /> : <ExpandMore />}
           </Button>
         </Box>
         <Box flex={5} component='form' ml={3} mr={2} onClick={handleOpenBackdrop}>
